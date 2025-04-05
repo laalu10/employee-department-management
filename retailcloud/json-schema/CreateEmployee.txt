@@ -1,0 +1,17 @@
+{
+	name :{ type:String},
+	dateOfBirth :{ type:String , format:date},
+	salary :{ type:double},
+	address :{ type:String},
+	role :{ type:String},
+	joiningDate :{ type:String , format:date},
+	yearlyBonusPercentage :{ type:double},
+	
+	(if you needed)
+	department :{
+		id :{ type:int}
+		},
+	reportingManager :{ 
+		id :{ type:int}
+		}
+}
