@@ -1,0 +1,40 @@
+
+****create employees table****
+
+CREATE TABLE employees
+	(id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	 address VARCHAR(200),
+	 date_of_birth DATE NOT NULL,
+	 joining_date DATE NOT NULL,
+	 name VARCHAR(100) NOT NULL  UNIQUE,
+	 rol VARCHAR(100) NOT NULL,
+	 SALARY DECIMAL(14,2),
+	 yearly_bonus_percentage DOUBLE,
+	 department_id BIGINT
+		FOREIGN KEY (department_id)
+		REFERENCES department(id)
+		ON DELETE SET NULL,
+	 reporting_manager_id BIGINT
+		FOREIGN KEY (reporting_manager_id)
+		REFERENCES employee(id)
+		ON DELETE SET NULL 
+	);
+	
+	
+	
+	
+	
+	
+	
+**** create departments tables ****
+
+
+CREATE TABLE departments
+	( id BIGINT AUTO_INCREMENT PRIMARY KEY,
+	 name VARCHAR(100) NOT NULL UNIQUE,
+	 creation_date DATE NOT NULL,
+	 department_head_id BIGINT
+		FOREIGN KEY (department_head_id)
+		REFERENCES employees(id)
+		ON DELETE SET NULL
+	);	
