@@ -1,0 +1,7 @@
+{
+	name :{ type:String},
+	creationDate :{ type:String , format:date},
+	departmentHead :{
+		id : {type:int}
+		}
+}
